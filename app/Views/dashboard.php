@@ -76,8 +76,8 @@
             <div class="card">
                 <div class="card-header border-0">
                     <div class="d-flex justify-content-between">
-                        <h3 class="card-title">Total Penjualan</h3>
-                        <a href="javascript:void(0);">Lihat Laporan</a>
+                        <h3 class="card-title">Total Penjualan <?= date('Y') ?></h3>
+                        <a href="<?=base_url('laporan/bulanan')?>">Lihat Laporan</a>
                     </div>
                 </div>
                 <div class="card-body">

@@ -5,8 +5,8 @@
     <div class="form-inline mb-2 d-flex justify-content-between">
         <button class="btn btn-success mb-1 export-excel"><i class="fas fa-file-excel"></i> Export</button>
         <div class="d-flex align-items-center">
-            <label for="search-date" class="mr-2">Search by date:</label>
-            <input type="date" id="search-date" class="form-control mr-2">
+            <label for="search-month" class="mr-2">Search by date:</label>
+            <input type="month" id="search-month" class="form-control mr-2">
             <button id="search-button" class="btn btn-primary">Search</button>
         </div>
     </div>
@@ -14,7 +14,7 @@
         <div class="card-body">
             <div class="table-responsive">
                 <?= csrf_field('token'); ?>
-                <table class="table table-bordered table-striped" id="table-laporan-harian" width="100%">
+                <table class="table table-bordered table-striped" id="table-laporan-bulanan" width="100%">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -36,13 +36,13 @@
 <?= $this->section('js'); ?>
 <script>
 $(document).ready(function() {
-    const table = $("#table-laporan-harian").DataTable({
+    const table = $("#table-laporan-bulanan").DataTable({
         processing: true,
         serverSide: true,
         ajax: {
-            url: `${BASE_URL}/laporan/harian`,
+            url: `${BASE_URL}/laporan/bulanan`,
             data: function(params) {
-                params.searchDate = $("#search-date").val();
+                params.searchMonth = $("#search-month").val();
             }
         },
         lengthMenu: [
@@ -90,38 +90,42 @@ $(document).ready(function() {
 
     
     $("#search-button").on("click", function() {
-        var searchDate = $("#search-date").val();
-        table.ajax.url(`${BASE_URL}/laporan/harian?searchDate=${searchDate}`).load();
+        var searchMonth = $("#search-month").val();
+        var year = searchMonth.substring(0, 4);
+        var month = searchMonth.substring(5);
+        searchMonth = year + month;
+        table.ajax.url(`${BASE_URL}/laporan/bulanan?searchMonth=${searchMonth}`).load();
 
-        var title = "Laporan Harian";
+        console.log(searchMonth);
 
-        if (searchDate !== "") {
-            var formattedDate = new Date(searchDate);
-            var day = formattedDate.getDate();
-            var month = formattedDate.toLocaleString('default', {
+        var title = "Laporan Bulan";
+
+        if (searchMonth !== "") {
+            const date = new Date();
+            date.setMonth(month-1);
+
+            month = date.toLocaleString('default', {
                 month: 'long'
             });
-            var year = formattedDate.getFullYear();
 
-            title += " " + day + " " + month + " " + year;
+            title += " " + month + " " + year;
         } else {
             var today = new Date();
-            var currentDay = today.getDate();
             var currentMonth = today.toLocaleString('default', {
                 month: 'long'
             });
             var currentYear = today.getFullYear();
 
-            title += " " + currentDay + " " + currentMonth + " " + currentYear;
+            title += " " + currentMonth + " " + currentYear;
         }
 
         // Update the title in the view
         $(".header-title").text(title);
     });
     $(".export-excel").on("click", function() {
-        var searchDate = $("#search-date").val();
-        console.log(searchDate);
-        location.href = `${BASE_URL}/laporan/download?searchDate=${searchDate}`;
+        var searchMonth = $("#search-month").val();
+        console.log(searchMonth);
+        location.href = `${BASE_URL}/laporan/download?searchMonth=${searchMonth}`;
     })
 });
 </script>

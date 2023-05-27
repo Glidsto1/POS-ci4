@@ -235,7 +235,7 @@
     let auto_numeric = new AutoNumeric('#tunai', {
         decimalCharacter: ",",
         decimalPlaces: 0,
-        digitGroupSeparator: ".",
+        // digitGroupSeparator: ".",
     });
 </script>
 <?=$this->endSection();?>

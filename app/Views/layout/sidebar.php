@@ -116,13 +116,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('penjualan/invoice') ?>" class="nav-link">
+                            <a href="<?= base_url('laporan/mingguan') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Mingguan</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('penjualan/invoice') ?>" class="nav-link">
+                            <a href="<?= base_url('laporan/bulanan') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Bulanan</p>
                             </a>

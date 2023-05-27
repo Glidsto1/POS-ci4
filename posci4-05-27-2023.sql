@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 02, 2022 at 10:16 PM
--- Server version: 10.3.34-MariaDB-0+deb10u1
--- PHP Version: 7.3.33-1+0~20211119.91+debian10~1.gbp618351
+-- Host: 127.0.0.1
+-- Generation Time: May 27, 2023 at 06:35 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -198,13 +198,14 @@ CREATE TABLE `tb_item` (
 --
 
 INSERT INTO `tb_item` (`id`, `barcode`, `nama_item`, `id_kategori`, `id_unit`, `id_pemasok`, `harga`, `stok`, `gambar`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'A0001', 'Sarimi Duo', 1, 2, 2, 2500, 50, 'gambar.jpg', '2021-10-12 18:32:35', '2022-05-02 22:03:59', '0000-00-00 00:00:00'),
-(2, 'A0002', 'Minyak Goreng', 4, 4, 2, 20000, 50, 'gambar.jpg', '2021-10-19 22:33:38', '2022-05-02 22:04:42', '0000-00-00 00:00:00'),
-(3, 'A0003', 'Rokok Djarum Super', 6, 6, 1, 20000, 20, 'gambar.jpg', '2021-10-19 22:33:55', '2022-05-02 22:06:50', '0000-00-00 00:00:00'),
-(4, 'A0004', 'Garam Dapur', 4, 5, 1, 2500, 20, 'gambar.jpg', '2021-10-19 22:34:42', '2022-05-02 22:07:20', '0000-00-00 00:00:00'),
-(5, 'A0005', 'Tolak Angin', 3, 2, 1, 3000, 45, 'gambar.jpg', '2021-10-20 21:26:17', '2022-05-02 22:07:51', '0000-00-00 00:00:00'),
-(6, 'A0006', 'Gula Pasir', 4, 4, 1, 10000, 30, 'gambar.jpg', '2021-10-20 22:31:17', '2022-05-02 22:08:20', '0000-00-00 00:00:00'),
-(7, 'A0007', 'Sprit', 2, 1, 3, 5000, 20, 'gambar.jpg', '2022-01-21 18:57:34', '2022-05-02 22:08:52', '0000-00-00 00:00:00');
+(1, 'AAA001', 'Levi | T-shirt | Blue', 1, 2, 1, 100000, 28, 'gambar.jpg', '2023-05-27 22:50:34', '2023-05-27 23:03:31', '0000-00-00 00:00:00'),
+(2, 'AAA002', 'The Executive | Jas Formal | Hitam', 8, 2, 3, 95000, 74, 'gambar.jpg', '2023-05-27 22:52:56', '2023-05-27 23:12:36', '0000-00-00 00:00:00'),
+(3, 'AAA003', '3 Second | Celana | Merah', 2, 2, 2, 75000, 47, 'gambar.jpg', '2023-05-27 22:53:42', '2023-05-27 23:13:03', '0000-00-00 00:00:00'),
+(4, 'AAA004', 'Uniqlo | Kaos | Gold', 1, 2, 3, 100000000, 0, 'gambar.jpg', '2023-05-27 22:54:23', '2023-05-27 23:17:39', '0000-00-00 00:00:00'),
+(5, 'AAA005', 'Zara | Kemeja | Putih', 5, 2, 1, 80000, 9, 'gambar.jpg', '2023-05-27 22:55:20', '2023-05-27 23:12:36', '0000-00-00 00:00:00'),
+(6, 'AAA006', 'Supreme | Topi | Merah', 3, 2, 3, 500000, 15, 'gambar.jpg', '2023-05-27 23:08:29', '2023-05-27 23:08:47', '0000-00-00 00:00:00'),
+(7, 'AAA007', 'Supreme | Tas | Hitam', 7, 2, 1, 600000, 19, 'gambar.jpg', '2023-05-27 23:09:13', '2023-05-27 23:11:08', '0000-00-00 00:00:00'),
+(8, 'AAA008', 'The Executive | Celana Panjang | Hitam', 2, 2, 3, 125000, 49, 'gambar.jpg', '2023-05-27 23:12:18', '2023-05-27 23:12:36', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -225,12 +226,14 @@ CREATE TABLE `tb_kategori` (
 --
 
 INSERT INTO `tb_kategori` (`id`, `nama_kategori`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Makanan', '2021-10-12 18:31:03', '2021-10-12 18:31:03', '0000-00-00 00:00:00'),
-(2, 'Minuman', '2021-10-12 18:31:07', '2021-10-19 22:19:43', '0000-00-00 00:00:00'),
-(3, 'Obat', '2021-10-19 21:55:08', '2021-10-19 21:56:16', '0000-00-00 00:00:00'),
-(4, 'Sembako', '2021-10-20 21:25:19', '2021-10-20 21:25:30', '0000-00-00 00:00:00'),
-(5, 'Atk', '2022-05-02 21:51:21', '2022-05-02 21:51:21', '0000-00-00 00:00:00'),
-(6, 'Lain-lain', '2022-05-02 22:06:02', '2022-05-02 22:06:02', '0000-00-00 00:00:00');
+(1, 'Baju', '2021-10-12 18:31:03', '2023-05-27 22:29:07', '0000-00-00 00:00:00'),
+(2, 'Celana', '2021-10-12 18:31:07', '2023-05-27 22:29:10', '0000-00-00 00:00:00'),
+(3, 'Topi', '2021-10-19 21:55:08', '2023-05-27 22:29:14', '0000-00-00 00:00:00'),
+(4, 'Sepatu', '2021-10-20 21:25:19', '2023-05-27 22:29:19', '0000-00-00 00:00:00'),
+(5, 'Kemeja', '2022-05-02 21:51:21', '2023-05-27 22:30:46', '0000-00-00 00:00:00'),
+(6, 'Jaket', '2022-05-02 22:06:02', '2023-05-27 22:32:38', '0000-00-00 00:00:00'),
+(7, 'Tas', '2023-05-27 22:30:54', '2023-05-27 22:32:50', '0000-00-00 00:00:00'),
+(8, 'Jas', '2023-05-27 22:52:14', '2023-05-27 22:52:14', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -289,6 +292,7 @@ INSERT INTO `tb_pemasok` (`id`, `nama_pemasok`, `telp_pemasok`, `alamat_pemasok`
 --
 
 CREATE TABLE `tb_pengaturan` (
+  `id` int(11) NOT NULL,
   `nama_toko` varchar(20) NOT NULL,
   `no_telp` varchar(20) NOT NULL,
   `alamat` varchar(255) NOT NULL
@@ -298,8 +302,8 @@ CREATE TABLE `tb_pengaturan` (
 -- Dumping data for table `tb_pengaturan`
 --
 
-INSERT INTO `tb_pengaturan` (`nama_toko`, `no_telp`, `alamat`) VALUES
-('Khalisa Online Store', '081295018034', 'Jl. Babakan Wadana No.39, Cipamokolan, Rancasari, Kota Bandung');
+INSERT INTO `tb_pengaturan` (`id`, `nama_toko`, `no_telp`, `alamat`) VALUES
+(0, 'Fiztick Claps', '081295018034', 'Jl. Babakan Wadana No.39, Cipamokolan, Rancasari, Kota Bandung');
 
 -- --------------------------------------------------------
 
@@ -324,6 +328,18 @@ CREATE TABLE `tb_penjualan` (
   `updated_at` datetime NOT NULL,
   `deleted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tb_penjualan`
+--
+
+INSERT INTO `tb_penjualan` (`id`, `invoice`, `id_pelanggan`, `total_harga`, `diskon`, `total_akhir`, `tunai`, `kembalian`, `catatan`, `tanggal`, `id_user`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(4, 'INV2305270002', 1, 200000, 0, 200000, 200000, 0, '', '2023-04-15', 1, '::1', '2023-04-15 23:03:31', '2023-04-15 23:03:31', '0000-00-00 00:00:00'),
+(5, 'INV2305270003', 1, 3175000, 0, 3175000, 3200000, 25000, '', '2023-05-27', 1, '::1', '2023-05-27 23:07:06', '2023-05-27 23:07:06', '0000-00-00 00:00:00'),
+(6, 'INV2305270004', 1, 600000, 0, 600000, 1000000, 400000, '', '2023-05-27', 1, '::1', '2023-05-27 23:11:08', '2023-05-27 23:11:08', '0000-00-00 00:00:00'),
+(7, 'INV2305270005', 1, 300000, 0, 300000, 300000, 0, '', '2023-05-27', 1, '::1', '2023-05-27 23:12:36', '2023-05-27 23:12:36', '0000-00-00 00:00:00'),
+(8, 'INV2305270006', 1, 225000, 0, 225000, 250000, 25000, '', '2023-05-27', 1, '::1', '2023-05-27 23:13:03', '2023-05-27 23:13:03', '0000-00-00 00:00:00'),
+(9, 'INV2305270007', 1, 100000000, 0, 100000000, 100000000, 0, '', '2023-04-12', 1, '::1', '2023-04-12 23:17:39', '2023-04-12 23:17:39', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -365,16 +381,6 @@ CREATE TABLE `tb_stok` (
   `deleted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `tb_stok`
---
-
-INSERT INTO `tb_stok` (`id_stok`, `tipe`, `id_item`, `id_pemasok`, `jumlah`, `keterangan`, `id_user`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'masuk', 1, 2, 50, 'belanja', 1, '::1', '2022-05-02 22:09:31', '2022-05-02 22:09:31', '0000-00-00 00:00:00'),
-(2, 'masuk', 6, 1, 30, 'belanja', 1, '::1', '2022-05-02 22:09:47', '2022-05-02 22:09:47', '0000-00-00 00:00:00'),
-(3, 'masuk', 7, 3, 20, 'belanja', 1, '::1', '2022-05-02 22:10:06', '2022-05-02 22:10:06', '0000-00-00 00:00:00'),
-(4, 'keluar', 5, 1, 5, 'rusak', 1, '::1', '2022-05-02 22:10:42', '2022-05-02 22:10:42', '0000-00-00 00:00:00');
-
 -- --------------------------------------------------------
 
 --
@@ -395,6 +401,21 @@ CREATE TABLE `tb_transaksi` (
   `deleted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `tb_transaksi`
+--
+
+INSERT INTO `tb_transaksi` (`id_transaksi`, `id_penjualan`, `id_item`, `harga_item`, `jumlah_item`, `diskon_item`, `subtotal`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 4, 1, 100000, 2, 0, 200000, '::1', '2023-05-27 23:03:31', '2023-05-27 23:03:31', '0000-00-00 00:00:00'),
+(2, 5, 2, 95000, 25, 0, 2375000, '::1', '2023-05-27 23:07:06', '2023-05-27 23:07:06', '0000-00-00 00:00:00'),
+(3, 5, 5, 80000, 10, 0, 800000, '::1', '2023-05-27 23:07:06', '2023-05-27 23:07:06', '0000-00-00 00:00:00'),
+(4, 6, 7, 600000, 1, 0, 600000, '::1', '2023-05-27 23:11:08', '2023-05-27 23:11:08', '0000-00-00 00:00:00'),
+(5, 7, 5, 80000, 1, 0, 80000, '::1', '2023-05-27 23:12:36', '2023-05-27 23:12:36', '0000-00-00 00:00:00'),
+(6, 7, 2, 95000, 1, 0, 95000, '::1', '2023-05-27 23:12:36', '2023-05-27 23:12:36', '0000-00-00 00:00:00'),
+(7, 7, 8, 125000, 1, 0, 125000, '::1', '2023-05-27 23:12:36', '2023-05-27 23:12:36', '0000-00-00 00:00:00'),
+(8, 8, 3, 75000, 3, 0, 225000, '::1', '2023-05-27 23:13:03', '2023-05-27 23:13:03', '0000-00-00 00:00:00'),
+(9, 9, 4, 100000000, 1, 0, 100000000, '::1', '2023-05-27 23:17:39', '2023-05-27 23:17:39', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -414,12 +435,7 @@ CREATE TABLE `tb_unit` (
 --
 
 INSERT INTO `tb_unit` (`id`, `nama_unit`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Botol', '2021-10-12 18:31:20', '2022-05-01 16:07:11', '0000-00-00 00:00:00'),
-(2, 'Pcs', '2021-10-12 18:31:25', '2021-10-12 18:31:25', '0000-00-00 00:00:00'),
-(3, 'Buah', '2021-10-12 18:31:29', '2021-10-12 18:31:29', '0000-00-00 00:00:00'),
-(4, 'Kg', '2021-10-19 22:26:05', '2022-05-02 21:57:21', '0000-00-00 00:00:00'),
-(5, 'Gram', '2021-10-20 21:25:42', '2022-05-02 21:58:11', '0000-00-00 00:00:00'),
-(6, 'Bungkus', '2022-05-02 22:06:13', '2022-05-02 22:06:13', '0000-00-00 00:00:00');
+(2, 'Pcs', '2021-10-12 18:31:25', '2021-10-12 18:31:25', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -449,9 +465,9 @@ CREATE TABLE `tb_users` (
 --
 
 INSERT INTO `tb_users` (`id`, `email`, `username`, `password`, `nama`, `alamat`, `id_role`, `avatar`, `status`, `token`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'sejatordev@gmail.com', 'superadmin', '$2y$10$ikpwdLGFPpQviC9GtExuYeBFAi.JbExd8IEvdQJw8sd7qZua9mb9O', 'Super Admin', 'Bandung', 1, 'avatar.jpg', 1, '7b9abf00d73a783b2f1559517823fd60331f9b0ae065f68b732be0a364ab7347', '0.0.0.0', '2021-10-12 18:29:41', '2022-05-02 22:02:14', NULL),
-(2, 'admin@gmail.com', 'admin', '$2y$10$hWdssQht7eBT21mncETcQeyTYimAT8K1rSKgRwBugGBOJcyuQgkTy', 'Administrator', 'Boyolali', 2, 'avatar.jpg', 1, 'bdbc976f1212965d03dcce1fecbcc811d3c817b7efd1aa61c090b5d7913b895f', '0.0.0.0', '2021-10-12 18:29:41', '2022-05-02 21:00:03', NULL),
-(3, 'kasir@gmail.com', 'kasir', '$2y$10$eEd2VoX5fOImeW0t20ojpuReyDOwN0i3iFbd9YPaPPCQVqGmjwYeC', 'Kasir', 'Bandung', 3, 'avatar.jpg', 1, NULL, '0.0.0.0', '2021-10-12 18:29:41', '2022-05-02 21:00:08', NULL);
+(1, 'sejatordev@gmail.com', 'superadmin', '$2y$10$PG9Nxciie3SHDVS6.a0Uw.QUqiAQx7pmM5qRnNuF0I5HvUpGbV50a', 'Super Admin', 'Bandung', 1, 'avatar.jpg', 1, '7b9abf00d73a783b2f1559517823fd60331f9b0ae065f68b732be0a364ab7347', '0.0.0.0', '2021-10-12 18:29:41', '2023-03-01 11:05:48', NULL),
+(2, 'admin@gmail.com', 'admin', '$2y$10$DMm.sX1hMZMmwufMtk4Ktug0Tp3VIeskxo8Dukcq1crEr5WE32hHW', 'Administrator', 'Boyolali', 2, 'avatar.jpg', 1, 'bdbc976f1212965d03dcce1fecbcc811d3c817b7efd1aa61c090b5d7913b895f', '0.0.0.0', '2021-10-12 18:29:41', '2023-03-01 11:06:03', NULL),
+(3, 'kasir@gmail.com', 'kasir', '$2y$10$q1sAVbrj2Jt2w50GFXYPOuyLbgJgAFgVEBldMa85/eN0MzZI4X.CK', 'Kasir', 'Bandung', 3, 'avatar.jpg', 1, NULL, '0.0.0.0', '2021-10-12 18:29:41', '2023-03-01 11:06:09', NULL);
 
 --
 -- Indexes for dumped tables
@@ -550,13 +566,13 @@ ALTER TABLE `tb_bulan_tahun`
 -- AUTO_INCREMENT for table `tb_item`
 --
 ALTER TABLE `tb_item`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tb_pelanggan`
@@ -574,7 +590,7 @@ ALTER TABLE `tb_pemasok`
 -- AUTO_INCREMENT for table `tb_penjualan`
 --
 ALTER TABLE `tb_penjualan`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tb_roles`
@@ -586,13 +602,13 @@ ALTER TABLE `tb_roles`
 -- AUTO_INCREMENT for table `tb_stok`
 --
 ALTER TABLE `tb_stok`
-  MODIFY `id_stok` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_stok` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `id_transaksi` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_transaksi` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tb_unit`

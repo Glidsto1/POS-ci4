@@ -86,6 +86,32 @@ class PenjualanModel extends Model
 
     public function laporanPenjualan($tahun)
     {
-        return $this->builder('tb_bulan_tahun')->select('bulan')->selectCount('jumlah_item', 'total')->join('tb_transaksi', 'date_format(created_at, "%m-%Y") = bln_thn', 'left')->where('tahun', $tahun)->groupBy('bln_thn')->get()->getResult();
+        return $this->builder('tb_bulan_tahun')->select('bulan')->selectCount('invoice', 'total')->join('tb_penjualan', 'date_format(created_at, "%m-%Y") = bln_thn', 'left')->where('tahun', $tahun)->groupBy('bln_thn')->get()->getResult();
+    }
+
+    public function detailLaporan($id = null, $harian = null, $mingguan = null, $bulanan = null)
+    {
+        $builder = $this->builder($this->table)
+            ->select('tb_penjualan.invoice AS invoice, 
+                tb_users.nama AS nama_kasir,
+                tb_pelanggan.nama_pelanggan AS nama_pelanggan, 
+                tb_penjualan.total_akhir AS total_penjualan, 
+                tb_penjualan.tunai AS pembayaran, 
+                tb_penjualan.kembalian AS saldo_akhir')
+            ->join('tb_pelanggan', 'tb_pelanggan.id = tb_penjualan.id_pelanggan')
+            ->join('tb_users', 'tb_users.id = tb_penjualan.id_user');
+
+        if ($harian != null) {
+            $date = ($harian) ? date("Y-m-d", strtotime($harian)) : date("Y-m-d");
+            $builder->where('DATE(tb_penjualan.created_at)', $date);
+        } else if ($mingguan != null) {
+            $builder->where('YEARWEEK(tb_penjualan.created_at)', $mingguan);
+        } else if ($bulanan != null) {
+            $builder->where('MONTH(tb_penjualan.created_at)', $bulanan);
+        }
+
+        if (empty($id)) {
+            return $builder->get()->getResult(); // tampilkan semua data
+        }
     }
 }
