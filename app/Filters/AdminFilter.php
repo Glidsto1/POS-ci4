@@ -11,7 +11,7 @@ class AdminFilter implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         // load helper
-        helper();
+        helper('fungsi');
         if (get_user('id_role') != 1) {
             return redirect()->to('dashboard')->with('pesan', 'Tidak diizinkan!');
         }
