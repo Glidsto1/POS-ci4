@@ -13,7 +13,7 @@ Aplikasi sistem penjualan berbasis web menggunakan framework codeigniter 4.
     - `database.default.hostname = localhost`
     - `database.default.database = posci4`
     - `database.default.username = root`
-    - `database.default.password = '
+    - `database.default.password = '''
     - `database.default.DBDriver = MySQLi`
  - Buat nama database `posci4` kemudian import file `posci4-05-27-2023.sql`
  - Jalankan aplikasi `php spark serve` kemudian buka urlnya `http://localhost:8080/`
