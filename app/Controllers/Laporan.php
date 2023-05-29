@@ -210,7 +210,8 @@ class Laporan extends BaseController {
         $writer   = new Xlsx($spreadsheet);
         // $namaFile = 'Laporan_Tanggal_' . str_replace(' ', '_', $date);
         // Redirect hasil generate xlsx ke web browser
-        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        // header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Type: application/vnd.ms-excel');
         header('Content-Disposition: attachment;filename=' . $namaFile . '.xlsx');
         $writer->save('php://output');
         exit;
